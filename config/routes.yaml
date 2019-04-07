@@ -1,0 +1,9 @@
+index:
+    path: /
+    controller: App\Controller\IndexController::index
+line_chart:
+    path: /chartdata/linechart
+    controller: App\Controller\ChartsController::getDataForLine
+pie_chart:
+    path: /chartdata/piechart
+    controller: App\Controller\ChartsController::getDataForPie

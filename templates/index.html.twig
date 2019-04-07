@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Echarts demo</h1>
+    <div align="center">
+        {% for line in lines %}
+            <div style="margin-top: 20px;">
+                <h2>{{ line.title | nl2br }}</h2>
+            </div>
+
+            {% for graph in line.charts %}
+                <div align="center" class="col-sm-12 col-md-6">
+                    <div id="{{ graph.divId }}" style="width: 800px;height:350px;"></div>
+                    <div class="h5 text-center">{{ graph.title }}</div>
+                </div>
+            {% endfor %}             
+        {% endfor %}
+        <br><br>
+        {% for chart in charts %}
+            <div style="margin-top: 20px;" class="col-sm-12 col-md-12">
+                <h2>{{ chart.title | nl2br }}</h2>
+            </div>
+
+            {% for graph in chart.charts %}
+                <div align="center" class="col-sm-12 col-md-4">
+                    <div id="{{ graph.divId }}" style="width: 800px;height:600px; margin: -65px;"></div>
+                    <div class="h5 text-center">{{ graph.title }}</div>
+                </div>
+            {% endfor %}             
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="build/js/data_line.js" type="text/javascript"></script>
+    <script src="build/js/data_pie.js" type="text/javascript"></script>
+{% endblock %}
