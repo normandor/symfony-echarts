@@ -1,4 +1,4 @@
-# symfony-echarts (not maintained)
+# symfony-echarts (unmaintained)
 Symfony 4 and Echarts.js<br><br>
 This skeleton app is an example of how to integrates the Echarts.js library with Symfony.<br>
 <br>
